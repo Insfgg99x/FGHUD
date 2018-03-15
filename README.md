@@ -11,7 +11,7 @@
 - [x] HUD
 
 ### Screen Shots
-![](/img/demo.gif)
+![](/img/demo)
 
 ### Usage
 
