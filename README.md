@@ -12,7 +12,9 @@
 
 ### Screen Shots
 
-![Screen Shots](/img/demo.gif)
+![](/img/demo.png)
+
+![](/img/demo.gif)
 
 ***See Vedio Here***
 [Demo Vedio](http://p5gxxccbw.bkt.clouddn.com/vedio.mov)
