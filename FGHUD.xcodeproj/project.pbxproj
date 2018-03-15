@@ -1,0 +1,440 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9709BB2B6E11D6591A2DF3AF /* Pods_FGHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55A3989926BF8EE3BD22C45 /* Pods_FGHUD.framework */; };
+		C31AF1AB205A21EC009526AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31AF1AA205A21EC009526AD /* AppDelegate.swift */; };
+		C31AF1AD205A21EC009526AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31AF1AC205A21EC009526AD /* ViewController.swift */; };
+		C31AF1B0205A21EC009526AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C31AF1AE205A21EC009526AD /* Main.storyboard */; };
+		C31AF1B2205A21EC009526AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C31AF1B1205A21EC009526AD /* Assets.xcassets */; };
+		C31AF1B5205A21EC009526AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C31AF1B3205A21EC009526AD /* LaunchScreen.storyboard */; };
+		C31AF1C0205A237A009526AD /* FGHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31AF1BF205A237A009526AD /* FGHUD.swift */; };
+		C31AF1C2205A27F4009526AD /* FGHUDConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31AF1C1205A27F4009526AD /* FGHUDConst.swift */; };
+		C31AF1C5205A36A8009526AD /* UIControl+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31AF1C4205A36A8009526AD /* UIControl+Action.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D359170F90EA09891DCA7F8 /* Pods-FGHUD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FGHUD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FGHUD/Pods-FGHUD.debug.xcconfig"; sourceTree = "<group>"; };
+		A3F5059FFD410FE0A354C6AA /* Pods-FGHUD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FGHUD.release.xcconfig"; path = "Pods/Target Support Files/Pods-FGHUD/Pods-FGHUD.release.xcconfig"; sourceTree = "<group>"; };
+		C31AF1A7205A21EC009526AD /* FGHUD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FGHUD.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C31AF1AA205A21EC009526AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C31AF1AC205A21EC009526AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C31AF1AF205A21EC009526AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C31AF1B1205A21EC009526AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C31AF1B4205A21EC009526AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C31AF1B6205A21EC009526AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C31AF1BF205A237A009526AD /* FGHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FGHUD.swift; sourceTree = "<group>"; };
+		C31AF1C1205A27F4009526AD /* FGHUDConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FGHUDConst.swift; sourceTree = "<group>"; };
+		C31AF1C4205A36A8009526AD /* UIControl+Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+Action.swift"; sourceTree = "<group>"; };
+		F55A3989926BF8EE3BD22C45 /* Pods_FGHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FGHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C31AF1A4205A21EC009526AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9709BB2B6E11D6591A2DF3AF /* Pods_FGHUD.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		93552559F48076AFE8D94D2B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F55A3989926BF8EE3BD22C45 /* Pods_FGHUD.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C31AF19E205A21EC009526AD = {
+			isa = PBXGroup;
+			children = (
+				C31AF1BC205A220D009526AD /* FGHUD */,
+				C31AF1C3205A36A8009526AD /* Tool */,
+				C31AF1A9205A21EC009526AD /* System */,
+				C31AF1A8205A21EC009526AD /* Products */,
+				EE592FD2A3D81C8890B2E076 /* Pods */,
+				93552559F48076AFE8D94D2B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C31AF1A8205A21EC009526AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C31AF1A7205A21EC009526AD /* FGHUD.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C31AF1A9205A21EC009526AD /* System */ = {
+			isa = PBXGroup;
+			children = (
+				C31AF1AA205A21EC009526AD /* AppDelegate.swift */,
+				C31AF1AC205A21EC009526AD /* ViewController.swift */,
+				C31AF1AE205A21EC009526AD /* Main.storyboard */,
+				C31AF1B1205A21EC009526AD /* Assets.xcassets */,
+				C31AF1B3205A21EC009526AD /* LaunchScreen.storyboard */,
+				C31AF1B6205A21EC009526AD /* Info.plist */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		C31AF1BC205A220D009526AD /* FGHUD */ = {
+			isa = PBXGroup;
+			children = (
+				C31AF1BF205A237A009526AD /* FGHUD.swift */,
+				C31AF1C1205A27F4009526AD /* FGHUDConst.swift */,
+			);
+			path = FGHUD;
+			sourceTree = "<group>";
+		};
+		C31AF1C3205A36A8009526AD /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				C31AF1C4205A36A8009526AD /* UIControl+Action.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		EE592FD2A3D81C8890B2E076 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1D359170F90EA09891DCA7F8 /* Pods-FGHUD.debug.xcconfig */,
+				A3F5059FFD410FE0A354C6AA /* Pods-FGHUD.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C31AF1A6205A21EC009526AD /* FGHUD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C31AF1B9205A21EC009526AD /* Build configuration list for PBXNativeTarget "FGHUD" */;
+			buildPhases = (
+				90340C4919127794E62D6BD5 /* [CP] Check Pods Manifest.lock */,
+				C31AF1A3205A21EC009526AD /* Sources */,
+				C31AF1A4205A21EC009526AD /* Frameworks */,
+				C31AF1A5205A21EC009526AD /* Resources */,
+				CC92F82D7240C850EA086327 /* [CP] Embed Pods Frameworks */,
+				4F4D0A04D5CDF08C9EC92432 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FGHUD;
+			productName = FGHUD;
+			productReference = C31AF1A7205A21EC009526AD /* FGHUD.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C31AF19F205A21EC009526AD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = xgf;
+				TargetAttributes = {
+					C31AF1A6205A21EC009526AD = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C31AF1A2205A21EC009526AD /* Build configuration list for PBXProject "FGHUD" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C31AF19E205A21EC009526AD;
+			productRefGroup = C31AF1A8205A21EC009526AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C31AF1A6205A21EC009526AD /* FGHUD */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C31AF1A5205A21EC009526AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C31AF1B5205A21EC009526AD /* LaunchScreen.storyboard in Resources */,
+				C31AF1B2205A21EC009526AD /* Assets.xcassets in Resources */,
+				C31AF1B0205A21EC009526AD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4F4D0A04D5CDF08C9EC92432 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FGHUD/Pods-FGHUD-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90340C4919127794E62D6BD5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FGHUD-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC92F82D7240C850EA086327 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FGHUD/Pods-FGHUD-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FGHUD/Pods-FGHUD-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C31AF1A3205A21EC009526AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C31AF1C2205A27F4009526AD /* FGHUDConst.swift in Sources */,
+				C31AF1C0205A237A009526AD /* FGHUD.swift in Sources */,
+				C31AF1C5205A36A8009526AD /* UIControl+Action.swift in Sources */,
+				C31AF1AD205A21EC009526AD /* ViewController.swift in Sources */,
+				C31AF1AB205A21EC009526AD /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C31AF1AE205A21EC009526AD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C31AF1AF205A21EC009526AD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C31AF1B3205A21EC009526AD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C31AF1B4205A21EC009526AD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C31AF1B7205A21EC009526AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C31AF1B8205A21EC009526AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C31AF1BA205A21EC009526AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D359170F90EA09891DCA7F8 /* Pods-FGHUD.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9P9D2224EQ;
+				INFOPLIST_FILE = "$(SRCROOT)/System/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xgf.FGHUD;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C31AF1BB205A21EC009526AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3F5059FFD410FE0A354C6AA /* Pods-FGHUD.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9P9D2224EQ;
+				INFOPLIST_FILE = "$(SRCROOT)/System/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xgf.FGHUD;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C31AF1A2205A21EC009526AD /* Build configuration list for PBXProject "FGHUD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C31AF1B7205A21EC009526AD /* Debug */,
+				C31AF1B8205A21EC009526AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C31AF1B9205A21EC009526AD /* Build configuration list for PBXNativeTarget "FGHUD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C31AF1BA205A21EC009526AD /* Debug */,
+				C31AF1BB205A21EC009526AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C31AF19F205A21EC009526AD /* Project object */;
+}
