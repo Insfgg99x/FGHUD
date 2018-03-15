@@ -1,1 +1,1 @@
-<iframe height=498 width=510 src="http://player.youku.com/embed/XNjcyMDU4Njg0">
+[![Watch the video](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](http://youtu.be/vt5fpE0bzSY)
