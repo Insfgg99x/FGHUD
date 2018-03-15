@@ -8,25 +8,39 @@
 
 import UIKit
 
+let sw = UIScreen.main.bounds.size.width
+let sh = UIScreen.main.bounds.size.height
+
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let titles = ["show loading", "show msg", "toast", "hide"]
+        let menu = UIView.init()
+        view.addSubview(menu)
+        menu.backgroundColor = UIColor.init(white: 0.9, alpha: 1.0)
+        menu.snp.makeConstraints({ (make) in
+            make.left.right.bottom.equalTo(self.view)
+            make.height.equalTo(50)
+        })
+        
+        let titles = ["style1","style2","style3", "toast", "hide"]
+        let gapx:CGFloat = 5
+        let marginx:CGFloat = 5
+        let marginy:CGFloat = 10
+        let w = (sw - marginx * 2 - CGFloat(titles.count - 1) * gapx) / CGFloat(titles.count)
+        let h:CGFloat = 30
         for i in 0 ..< titles.count {
             let btn = UIButton.init()
             btn.setTitle(titles[i], for: .normal)
-            btn.setTitleColor(.black, for: .normal)
-            btn.layer.cornerRadius = 4
-            btn.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-            btn.layer.borderWidth = 1
-            btn.layer.borderColor = UIColor.lightGray.cgColor
+            btn.setTitleColor(.blue, for: .normal)
+            btn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
             view.addSubview(btn)
+            let xpos = marginx + (w + gapx) * CGFloat(i)
             btn.snp.makeConstraints({ (make) in
-                make.centerX.equalToSuperview()
-                make.height.equalTo(40)
-                make.width.equalTo(130)
-                make.top.equalToSuperview().offset(150 + 60 * i)
+                make.left.equalTo(self.view).offset(xpos)
+                make.height.equalTo(h)
+                make.width.equalTo(w)
+                make.bottom.equalToSuperview().offset(-marginy)
             })
             btn.handleClick(events: .touchUpInside, click: { (sender) in
                 switch  i {
@@ -34,12 +48,15 @@ class ViewController: UIViewController {
                     showHUD()
                     break
                 case 1:
-                    showHUD(.content("FGHUD show msg style"))
+                    showHUD(.loading("Hi, FGHUD"))
                     break
                 case 2:
-                    showHUD(.toast("FGHUD toast style"))
+                    showHUD(.content("Hi, FGHUD"))
                     break
                 case 3:
+                    showHUD(.toast("Hi, FGHUD"))
+                    break
+                case 4:
                     hideHUD()
                     break
                 default:

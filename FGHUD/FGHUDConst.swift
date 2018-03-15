@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-let FGHUDTintColor          = UIColor.init(white: 0.2, alpha: 0.8)
+let FGHUDTintColor          = UIColor.init(white: 0.2, alpha: 0.9)
 let FGHUDMaxWidth:CGFloat   = 160
 let FGHUDMaxHeight:CGFloat  = 100
 let FGHUDMinWidth:CGFloat   = 80

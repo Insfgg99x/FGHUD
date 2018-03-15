@@ -13,7 +13,7 @@ public enum HUDType {
     //show void hud
     case `void`
     //show a hud with template
-    case loading
+    case loading(String?)
     //show a hud with given content
     case content(String?)
     //auto dismiss after FGHUDToastDuration sec.
@@ -64,8 +64,8 @@ class FGHUD: UIView {
             hudh = h
         }
         switch type {
-        case .loading:
-            contentLb.text = "请稍后"
+        case let .loading(msg):
+            contentLb.text = msg
             contentLb.snp.makeConstraints { (make) in
                 make.centerY.equalTo(hud).offset(25)
                 make.left.equalTo(hud).offset(5)
@@ -104,6 +104,8 @@ class FGHUD: UIView {
         return hud
     }
 }
+//MARK: -
+//MARK: Hide
 extension FGHUD {
     class func hide(from:UIView?) {
         guard let view = from else {
@@ -131,6 +133,8 @@ extension FGHUD {
         removeFromSuperview()
     }
 }
+//MARK: -
+//MARK: offset
 extension FGHUD {
     private class func offset2center(target: UIView) -> CGFloat {
         guard let window = UIApplication.shared.keyWindow else {
@@ -141,6 +145,8 @@ extension FGHUD {
         return offset
     }
 }
+//MARK: -
+//MARK: UIViewController
 extension UIViewController {
     func showHUD(_ type:HUDType) {
         DispatchQueue.main.async {
@@ -165,7 +171,7 @@ extension UIViewController {
             if let tmp = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
                 tmp.hideWithoutAnimation()
             }
-            let hud = FGHUD.show(on: self.view, type: .loading)
+            let hud = FGHUD.show(on: self.view, type: .loading("请稍后"))
             objc_setAssociatedObject(self, &FGHUDKey, hud, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
