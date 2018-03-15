@@ -15,6 +15,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let targetView = UIView.init()
+        targetView.backgroundColor = UIColor.init(white: 0.9, alpha: 1.0)
+        view.addSubview(targetView)
+        targetView.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().offset(90)
+            make.size.equalTo(CGSize.init(width: 160, height: 120))
+        }
+        
         let menu = UIView.init()
         view.addSubview(menu)
         menu.backgroundColor = UIColor.init(white: 0.9, alpha: 1.0)
@@ -46,18 +55,23 @@ class ViewController: UIViewController {
                 switch  i {
                 case 0:
                     showHUD()
+                    _ = FGHUD.show(on: targetView, type: .loading("请稍后"))
                     break
                 case 1:
                     showHUD(.loading("Hi, FGHUD"))
+                    _ = FGHUD.show(on: targetView, type: .loading("Hi,FGHUD"))
                     break
                 case 2:
                     showHUD(.content("Hi, FGHUD"))
+                    _ = FGHUD.show(on: targetView, type: .content("Hi,FGHUD"))
                     break
                 case 3:
                     showHUD(.toast("Hi, FGHUD"))
+                    _ = FGHUD.show(on: targetView, type: .toast("Hi,FGHUD"))
                     break
                 case 4:
                     hideHUD()
+                    FGHUD.hide(from: targetView)
                     break
                 default:
                     break

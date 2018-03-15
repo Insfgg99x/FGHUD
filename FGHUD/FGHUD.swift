@@ -25,6 +25,7 @@ class FGHUD: UIView {
         guard let view = v else {
             return nil
         }
+        hide(from: view)
         let hud = FGHUD.init(frame: .init(x: 0, y: 0, width: 100, height: 100))
         hud.backgroundColor = FGHUDTintColor
         hud.layer.cornerRadius = 10
@@ -86,15 +87,17 @@ class FGHUD: UIView {
             break
         case let .toast(msg):
             contentBlock(msg)
+            DispatchQueue.main.asyncAfter(deadline: .now() + FGHUDToastDuration, execute: {
+                hud.hide()
+            })
             break
         default:
             break
         }
         view.addSubview(hud)
-        let offset = offset2center(target: view)
         hud.snp.makeConstraints { (make) in
             make.centerX.equalTo(view)
-            make.top.equalTo(view).offset(offset - trimx)
+            make.centerY.equalToSuperview()
             make.size.equalTo(CGSize.init(width: hudw, height: hudh))
         }
         hud.alpha = 0.0
@@ -134,38 +137,8 @@ extension FGHUD {
     }
 }
 //MARK: -
-//MARK: offset
-extension FGHUD {
-    private class func offset2center(target: UIView) -> CGFloat {
-        guard let window = UIApplication.shared.keyWindow else {
-            return 0
-        }
-        let rect = target.convert(target.bounds, to: window)
-        let offset = UIScreen.main.bounds.size.height / 2 - rect.origin.y
-        return offset
-    }
-}
-//MARK: -
 //MARK: UIViewController
 extension UIViewController {
-    func showHUD(_ type:HUDType) {
-        DispatchQueue.main.async {
-            if let tmp = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
-                tmp.hideWithoutAnimation()
-            }
-            let hud = FGHUD.show(on: self.view, type: type)
-            objc_setAssociatedObject(self, &FGHUDKey, hud, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            switch type {
-            case .toast(_):
-                DispatchQueue.main.asyncAfter(deadline: .now() + FGHUDToastDuration, execute: {
-                    hud?.hide()
-                })
-                break
-            default:
-                break
-            }
-        }
-    }
     func showHUD() {
         DispatchQueue.main.async {
             if let tmp = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
@@ -174,6 +147,13 @@ extension UIViewController {
             let hud = FGHUD.show(on: self.view, type: .loading("请稍后"))
             objc_setAssociatedObject(self, &FGHUDKey, hud, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
+    }
+    func showHUD(_ type:HUDType) {
+        if let tmp = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
+            tmp.hideWithoutAnimation()
+        }
+        let hud = FGHUD.show(on: self.view, type: type)
+        objc_setAssociatedObject(self, &FGHUDKey, hud, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
     func hideHUD() {
         if let hud = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
