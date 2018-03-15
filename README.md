@@ -12,10 +12,8 @@
 
 ### Screen Shots
 
-![](/img/demo.gif)
-
-***See Vedio Here***
-[Demo Vedio](http://p5gxxccbw.bkt.clouddn.com/vedio.mov)
+[***See Vedio Here***](http://p5gxxccbw.bkt.clouddn.com/vedio.mov)
+![Screen Shots](/img/demo.gif)
 
 ### Usage
 
