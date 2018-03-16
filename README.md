@@ -14,17 +14,11 @@
 ### Screen Shots
 
 ![](/img/1.png)
-
 ![](/img/2.png)
-
 ![](/img/3.png)
-
 ![](/img/4.png)
-
 ![](/img/5.png)
-
 ![](/img/6.png)
-
 ![](/img/7.png)
 
 ![](/img/demo.gif)
@@ -58,7 +52,6 @@ hideHUD()
 
 ```swift
 public enum HUDType {
-    public enum HUDType {
     //show a hud with template
     case loading(String?)
     //show success
@@ -72,9 +65,11 @@ public enum HUDType {
     //auto dismiss after given time(FGHUDToastDuration)
     case toast(String?)
 }
-}
 ```
-
+### Install
+```
+pod 'FGHUD'
+```
 ### Required
 
 - [x] Xocde 9
