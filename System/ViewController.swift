@@ -14,7 +14,7 @@ let sh = UIScreen.main.bounds.size.height
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor.init(white: 0.9, alpha: 1.0)
         title = "FGHUD in view controller"
         let rightBtn = UIButton.init()
         rightBtn.setTitle("in view", for: .normal)

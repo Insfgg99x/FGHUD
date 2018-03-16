@@ -31,17 +31,42 @@
 ### Usage
 
 #### in a view controller
-- showHUD()
-- showHUD(.loading("Hi, FGHUD"))
-- showHUD(.content("Hi, FGHUD"))
-- showHUD(.toast("Hi, FGHUD"))
-- hideHUD()
+templete hud
+```
+showHUD()
+```
+or
+```
+showHUD(.loading("Hi, FGHUD"))
+```
+toast style
+```
+showHUD(.content("Hi, FGHUD"))
+```
+toast
+```
+showHUD(.toast("Hi, FGHUD"))
+```
+hide
+```
+hideHUD()
+```
 
 #### or in a view
-- _ = FGHUD.show(on: targetView, type: .loading("请稍后"))
-- _ = FGHUD.show(on: targetView, type: .content("Hi,FGHUD"))
-- _ = FGHUD.show(on: targetView, type: .toast("Hi,FGHUD"))
-- FGHUD.hide(from: targetView)
+show hud with content
+```
+_ = FGHUD.show(on: targetView, type: .loading("请稍后"))
+or
+_ = FGHUD.show(on: targetView, type: .content("Hi,FGHUD"))
+```
+toast
+```
+_ = FGHUD.show(on: targetView, type: .toast("Hi,FGHUD"))
+```
+hide
+```
+FGHUD.hide(from: targetView)
+```
 
 ### Style
 ```
