@@ -7,11 +7,12 @@
 
 ----------------------------------------
 ### FGHUD
-- [x] HUD
-- [x] toast
-- [x] rotation support
 
-### Screen Shots
+- [x] HUD
+- [x] Toast
+- [x] Rotation support
+
+### Feathures
 
 ![](/img/1.png)
 ![](/img/2.png)
@@ -23,9 +24,8 @@
 
 ![](/img/demo.gif)
 
-***See Vedio Here***
-
-[Vedio](https://pan.baidu.com/s/1mYi3fG7K-5kq_aI-gNhsbA)
+****See Vedio Here****
+[Vedio](https://pan.baidu.com/s/1mb7OGRJsU0nDDhGTanW9cg)
 
 ### Usage
 
@@ -68,7 +68,7 @@ public enum HUDType {
 ```
 ### Install
 ```
-pod 'FGHUD'
+pod 'FGHUD', '~> 2.0'
 ```
 ### Required
 
