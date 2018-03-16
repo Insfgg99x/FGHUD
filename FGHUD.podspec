@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 s.name         = "FGHUD"
 s.version      = "2.0"
-s.summary      = "FGHUD is a Swift convenice tool kit"
+s.summary      = "FGHUD is a simple andpretty siwft HUD"
 s.homepage     = "https://github.com/Insfgg99x/FGHUD"
 s.license      = "MIT"
 s.authors      = { "CGPointZero" => "newbox0512@yahoo.com" }
