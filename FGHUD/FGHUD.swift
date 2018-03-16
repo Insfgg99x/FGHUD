@@ -230,7 +230,9 @@ private class FGHUDAccessoryView: UIView {
         }
     }
 }
-extension UIView {
+//MARK: -
+//MARK: UIView
+public extension UIView {
     func showHUD() {
         DispatchQueue.main.async {
             if let tmp = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
@@ -255,7 +257,7 @@ extension UIView {
 }
 //MARK: -
 //MARK: UIViewController
-extension UIViewController {
+public extension UIViewController {
     func showHUD() {
         DispatchQueue.main.async {
             if let tmp = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
