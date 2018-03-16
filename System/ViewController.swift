@@ -29,6 +29,14 @@ class ViewController: UIViewController {
         let rightItem = UIBarButtonItem.init(customView: rightBtn)
         navigationItem.rightBarButtonItem = rightItem
         
+        let menu = UIView.init()
+        view.addSubview(menu)
+        menu.backgroundColor = UIColor.init(white: 0.9, alpha: 1.0)
+        menu.snp.makeConstraints({ (make) in
+            make.left.right.bottom.equalTo(self.view)
+            make.height.equalTo(90)
+        })
+        
         let titles = ["loading1","loading2","success","error", "warn","content", "toast","hide"]
         let gapx:CGFloat = 10
         let gapy:CGFloat = 10
@@ -56,7 +64,7 @@ class ViewController: UIViewController {
                 make.left.equalTo(self.view).offset(xpos)
                 make.height.equalTo(h)
                 make.width.equalTo(w)
-                make.bottom.equalToSuperview().offset(-90 + ypos)
+                make.bottom.equalToSuperview().offset(-60 + ypos)
             })
             btn.handleClick(events: .touchUpInside, click: { (sender) in
                 switch  i {
