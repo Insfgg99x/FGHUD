@@ -14,6 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        let navi = UINavigationController.init(rootViewController: ViewController())
+        navi.navigationBar.barStyle = .black
+        window?.rootViewController = navi
         return true
     }
 }

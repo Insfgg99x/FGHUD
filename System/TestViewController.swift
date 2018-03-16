@@ -1,34 +1,35 @@
 //
-//  ViewController.swift
+//  TestViewController.swift
 //  FGHUD
 //
-//  Created by xgf on 2018/3/15.
+//  Created by xgf on 2018/3/16.
 //  Copyright © 2018年 xgf. All rights reserved.
 //
 
 import UIKit
 
-let sw = UIScreen.main.bounds.size.width
-let sh = UIScreen.main.bounds.size.height
+class TestViewController: UIViewController {
 
-class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "FGHUD in view"
         view.backgroundColor = .white
-        title = "FGHUD in view controller"
-        let rightBtn = UIButton.init()
-        rightBtn.setTitle("in view", for: .normal)
-        rightBtn.setTitleColor(.white, for: .normal)
-        weak var wkself = self
-        rightBtn.handleClick(events: .touchUpInside, click: { (sender) in
-            sender.isEnabled = false
-            let inview = TestViewController()
-            wkself?.navigationController?.pushViewController(inview, animated: true)
-            sender.isEnabled = true
-        })
-        let rightItem = UIBarButtonItem.init(customView: rightBtn)
-        navigationItem.rightBarButtonItem = rightItem
         
+        let targetView = UIView.init()
+        targetView.backgroundColor = .red
+        view.addSubview(targetView)
+        targetView.snp.makeConstraints { (make) in
+            make.center.equalTo(self.view)
+            make.size.equalTo(CGSize.init(width: 200, height: 200))
+        }
+        
+        let menu = UIView.init()
+        view.addSubview(menu)
+        menu.backgroundColor = UIColor.init(white: 0.9, alpha: 1.0)
+        menu.snp.makeConstraints({ (make) in
+            make.left.right.bottom.equalTo(self.view)
+            make.height.equalTo(50)
+        })
         let titles = ["style1","style2","style3", "toast", "hide"]
         let gapx:CGFloat = 5
         let marginx:CGFloat = 5
@@ -51,24 +52,19 @@ class ViewController: UIViewController {
             btn.handleClick(events: .touchUpInside, click: { (sender) in
                 switch  i {
                 case 0:
-                    showHUD()
-                    //_ = FGHUD.show(on: targetView, type: .loading("请稍后"))
+                    _ = FGHUD.show(on: targetView, type: .loading("请稍后"))
                     break
                 case 1:
-                    showHUD(.loading("Hi, FGHUD"))
-                    //_ = FGHUD.show(on: targetView, type: .loading("Hi,FGHUD"))
+                    _ = FGHUD.show(on: targetView, type: .loading("Hi,FGHUD"))
                     break
                 case 2:
-                    showHUD(.content("Hi, FGHUD"))
-                    //_ = FGHUD.show(on: targetView, type: .content("Hi,FGHUD"))
+                    _ = FGHUD.show(on: targetView, type: .content("Hi,FGHUD"))
                     break
                 case 3:
-                    showHUD(.toast("Hi, FGHUD"))
-                    //_ = FGHUD.show(on: targetView, type: .toast("Hi,FGHUD"))
+                    _ = FGHUD.show(on: targetView, type: .toast("Hi,FGHUD"))
                     break
                 case 4:
-                    hideHUD()
-                    //FGHUD.hide(from: targetView)
+                    FGHUD.hide(from: targetView)
                     break
                 default:
                     break
@@ -77,4 +73,3 @@ class ViewController: UIViewController {
         }
     }
 }
-
