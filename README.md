@@ -36,7 +36,7 @@ showHUD()
 showHUD(.loading("Loading..."))
 showHUD(.success("Success"))
 showHUD(.error("Operation Error"))
-showHUD(HUDType.content("watch Out!"))
+showHUD(.content("watch Out!"))
 showHUD(.content("Hi, FGHUD"))
 showHUD(.toast("Hi, FGHUD"))
 ```
@@ -47,6 +47,11 @@ showHUD(.toast("Hi, FGHUD"))
 hideHUD()
 ```
 ****HUD with type success,error,warning,toast will auto dismiss itself****
+
+### Install
+```
+pod 'FGHUD', '~> 2.2'
+```
 
 ### Style
 
@@ -66,10 +71,7 @@ public enum HUDType {
     case toast(String?)
 }
 ```
-### Install
-```
-pod 'FGHUD', '~> 2.0'
-```
+
 ### Required
 
 - [x] Xocde 9
