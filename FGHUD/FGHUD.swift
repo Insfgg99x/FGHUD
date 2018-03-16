@@ -10,13 +10,17 @@ import UIKit
 import SnapKit
 
 public enum HUDType {
-    //show void hud
-    case `void`
     //show a hud with template
     case loading(String?)
-    //show a hud with given content
+    //show success
+    case success(String?)
+    //show error
+    case error(String?)
+    //show warn
+    case warning(String?)
+    //show given content
     case content(String?)
-    //auto dismiss after FGHUDToastDuration sec.
+    //auto dismiss after given time(FGHUDToastDuration)
     case toast(String?)
 }
 
@@ -27,8 +31,8 @@ class FGHUD: UIView {
         }
         hide(from: view)
         let hud = FGHUD.init(frame: .init(x: 0, y: 0, width: 100, height: 100))
-        hud.backgroundColor = FGHUDTintColor
         hud.layer.cornerRadius = 10
+        hud.backgroundColor = FGHUDTintColor
         
         let contentLb = UILabel.init(frame: .zero)
         contentLb.textColor = .white
@@ -64,11 +68,29 @@ class FGHUD: UIView {
             hudw = w + 20
             hudh = h
         }
+        func fillBlock(_ msg: String?) {
+            contentLb.text = msg
+            contentLb.snp.makeConstraints { (make) in
+                make.bottom.equalTo(hud).offset(-10)
+                make.left.equalTo(hud).offset(5)
+                make.right.equalTo(hud).offset(-5)
+                make.height.equalTo(20)
+            }
+            let accessoryView = FGHUDAccessoryView.init(frame: .zero)
+            hud.addSubview(accessoryView)
+            accessoryView.snp.makeConstraints({ (make) in
+                make.edges.equalTo(hud)
+            })
+            accessoryView.type = type
+            DispatchQueue.main.asyncAfter(deadline: .now() + FGHUDToastDuration) {
+                hud.hide()
+            }
+        }
         switch type {
         case let .loading(msg):
             contentLb.text = msg
             contentLb.snp.makeConstraints { (make) in
-                make.centerY.equalTo(hud).offset(25)
+                make.bottom.equalTo(hud).offset(-10)
                 make.left.equalTo(hud).offset(5)
                 make.right.equalTo(hud).offset(-5)
                 make.height.equalTo(20)
@@ -82,6 +104,15 @@ class FGHUD: UIView {
             }
             indicator.startAnimating()
             break
+        case let .success(msg):
+            fillBlock(msg)
+            break
+        case let .error(msg):
+            fillBlock(msg)
+            break
+        case let .warning(msg):
+            fillBlock(msg)
+            break
         case let .content(msg):
             contentBlock(msg)
             break
@@ -90,8 +121,6 @@ class FGHUD: UIView {
             DispatchQueue.main.asyncAfter(deadline: .now() + FGHUDToastDuration, execute: {
                 hud.hide()
             })
-            break
-        default:
             break
         }
         view.addSubview(hud)
@@ -136,6 +165,94 @@ extension FGHUD {
         removeFromSuperview()
     }
 }
+private class FGHUDAccessoryView: UIView {
+    fileprivate var type:HUDType? {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .clear
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    override func draw(_ rect: CGRect) {
+        guard let hudType = type else {
+            return
+        }
+        let w = rect.size.width
+        let radius:CGFloat = 20
+        let topy:CGFloat = 15
+        switch hudType {
+        case .success:
+            let path = UIBezierPath.init()
+            path.move(to: .init(x: w/2 + radius, y: topy + radius))
+            path.addArc(withCenter: .init(x: w/2, y: topy + radius), radius: radius, startAngle: 0, endAngle: .pi*2, clockwise: true)
+            path.move(to: .init(x: w/2 - radius / 2, y: topy + radius))
+            path.addLine(to: .init(x: w/2 - radius / 2 + 6, y: topy + radius + 6))
+            path.addLine(to: .init(x: w/2 + radius / 2, y: topy + radius  - 6))
+            UIColor.white.setStroke()
+            path.stroke()
+            path.close()
+        case .error:
+            let path = UIBezierPath.init()
+            path.move(to: .init(x: w/2 + radius, y: topy + radius))
+            path.addArc(withCenter: .init(x: w/2, y: topy + radius), radius: radius, startAngle: 0, endAngle: .pi*2, clockwise: true)
+            let fix:CGFloat = 2
+            path.move(to: .init(x: w/2 - radius / 2 + fix, y: topy + radius / 2 + 2))
+            path.addLine(to: .init(x: w/2 + radius / 2 - fix, y: topy + radius * 3 / 2 - fix))
+            path.move(to: .init(x: w/2 + radius / 2 - fix, y: topy + radius / 2 + fix))
+            path.addLine(to: .init(x: w/2 - radius / 2 + fix, y: topy + radius * 3 / 2 - fix))
+            UIColor.white.setStroke()
+            path.stroke()
+            path.close()
+        case .warning:
+            let path = UIBezierPath.init()
+            path.move(to: .init(x: w/2 + radius, y: topy + radius))
+            path.addArc(withCenter: .init(x: w/2, y: topy + radius), radius: radius, startAngle: 0, endAngle: .pi*2, clockwise: true)
+            path.move(to: .init(x: w/2, y: topy + radius / 2))
+            path.addLine(to: .init(x: w / 2, y: topy + radius * 3 / 2 - 2))
+            UIColor.white.setStroke()
+            path.stroke()
+            path.close()
+            
+            let dotRadius:CGFloat = 1
+            let dotPath = UIBezierPath.init()
+            dotPath.move(to: .init(x: w / 2, y: topy + radius * 3 / 2))
+            dotPath.addArc(withCenter: .init(x: w / 2, y: topy + radius * 3 / 2 + dotRadius), radius: dotRadius, startAngle: 0, endAngle: .pi*2, clockwise: true)
+            UIColor.white.setFill()
+            dotPath.fill()
+            dotPath.close()
+        default:
+            break
+        }
+    }
+}
+extension UIView {
+    func showHUD() {
+        DispatchQueue.main.async {
+            if let tmp = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
+                tmp.hideWithoutAnimation()
+            }
+            let hud = FGHUD.show(on: self, type: .loading("请稍候"))
+            objc_setAssociatedObject(self, &FGHUDKey, hud, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    func showHUD(_ type:HUDType) {
+        if let tmp = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
+            tmp.hideWithoutAnimation()
+        }
+        let hud = FGHUD.show(on: self, type: type)
+        objc_setAssociatedObject(self, &FGHUDKey, hud, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+    }
+    func hideHUD() {
+        if let hud = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
+            hud.hide()
+        }
+    }
+}
 //MARK: -
 //MARK: UIViewController
 extension UIViewController {
@@ -144,7 +261,7 @@ extension UIViewController {
             if let tmp = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
                 tmp.hideWithoutAnimation()
             }
-            let hud = FGHUD.show(on: self.view, type: .loading("请稍后"))
+            let hud = FGHUD.show(on: self.view, type: .loading("请稍候"))
             objc_setAssociatedObject(self, &FGHUDKey, hud, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }

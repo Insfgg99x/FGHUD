@@ -14,6 +14,6 @@ let FGHUDMaxWidth:CGFloat   = 160
 let FGHUDMaxHeight:CGFloat  = 100
 let FGHUDMinWidth:CGFloat   = 80
 let FGHUDMinHeight:CGFloat  = 50
-let FGHUDToastDuration      = 1.5
+let FGHUDToastDuration      = 1.0
 let FGHUDFontSize:CGFloat   = 16
 var FGHUDKey                = "FGHUDKey"

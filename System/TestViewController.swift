@@ -52,19 +52,19 @@ class TestViewController: UIViewController {
             btn.handleClick(events: .touchUpInside, click: { (sender) in
                 switch  i {
                 case 0:
-                    _ = FGHUD.show(on: targetView, type: .loading("请稍后"))
+                    showHUD()
                     break
                 case 1:
-                    _ = FGHUD.show(on: targetView, type: .loading("Hi,FGHUD"))
+                    showHUD(.loading("Hi,FGHUD"))
                     break
                 case 2:
-                    _ = FGHUD.show(on: targetView, type: .content("Hi,FGHUD"))
+                    showHUD(.content("Hi,FGHUD"))
                     break
                 case 3:
-                    _ = FGHUD.show(on: targetView, type: .toast("Hi,FGHUD"))
+                    showHUD(.toast("Hi,FGHUD"))
                     break
                 case 4:
-                    FGHUD.hide(from: targetView)
+                    hideHUD()
                     break
                 default:
                     break

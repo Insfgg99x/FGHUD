@@ -29,46 +29,60 @@ class ViewController: UIViewController {
         let rightItem = UIBarButtonItem.init(customView: rightBtn)
         navigationItem.rightBarButtonItem = rightItem
         
-        let titles = ["style1","style2","style3", "toast", "hide"]
-        let gapx:CGFloat = 5
+        let titles = ["loading1","loading2","success","error", "warn","content", "toast","hide"]
+        let gapx:CGFloat = 10
+        let gapy:CGFloat = 10
         let marginx:CGFloat = 5
         let marginy:CGFloat = 10
-        let w = (sw - marginx * 2 - CGFloat(titles.count - 1) * gapx) / CGFloat(titles.count)
+        let totalCol = 4
+        let w = (sw - marginx * 2 - CGFloat(totalCol - 1) * gapx) / CGFloat(totalCol)
         let h:CGFloat = 30
         for i in 0 ..< titles.count {
+            let row = i / totalCol
+            let col = i % totalCol
+            let xpos = marginx + (w + gapx) * CGFloat(col)
+            let ypos = marginy + (h + gapy) * CGFloat(row)
             let btn = UIButton.init()
             btn.setTitle(titles[i], for: .normal)
             btn.setTitleColor(.blue, for: .normal)
+            btn.setTitleColor(.red, for: .highlighted)
+            btn.layer.borderColor = UIColor.lightGray.cgColor
+            btn.layer.borderWidth = 0.5
+            btn.layer.cornerRadius = 4
+            btn.showsTouchWhenHighlighted = true
             btn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
             view.addSubview(btn)
-            let xpos = marginx + (w + gapx) * CGFloat(i)
             btn.snp.makeConstraints({ (make) in
                 make.left.equalTo(self.view).offset(xpos)
                 make.height.equalTo(h)
                 make.width.equalTo(w)
-                make.bottom.equalToSuperview().offset(-marginy)
+                make.bottom.equalToSuperview().offset(-90 + ypos)
             })
             btn.handleClick(events: .touchUpInside, click: { (sender) in
                 switch  i {
                 case 0:
                     showHUD()
-                    //_ = FGHUD.show(on: targetView, type: .loading("请稍后"))
                     break
                 case 1:
-                    showHUD(.loading("Hi, FGHUD"))
-                    //_ = FGHUD.show(on: targetView, type: .loading("Hi,FGHUD"))
+                    showHUD(.loading("Hi,FGHUD"))
                     break
                 case 2:
-                    showHUD(.content("Hi, FGHUD"))
-                    //_ = FGHUD.show(on: targetView, type: .content("Hi,FGHUD"))
+                    showHUD(.success("哈哈哈"))
                     break
                 case 3:
-                    showHUD(.toast("Hi, FGHUD"))
-                    //_ = FGHUD.show(on: targetView, type: .toast("Hi,FGHUD"))
+                    showHUD(.error("Hi, FGHUD"))
                     break
                 case 4:
+                    showHUD(.warning("Hi, FGHUD"))
+                    break
+                case 5:
+                    showHUD(HUDType.content("Hi,FGHUD"))
+                    break
+                case 6:
+                    showHUD(.toast("Hi, FGHUD"))
+                    break
+                case 7:
                     hideHUD()
-                    //FGHUD.hide(from: targetView)
                     break
                 default:
                     break
