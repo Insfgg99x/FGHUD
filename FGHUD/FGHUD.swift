@@ -20,7 +20,7 @@ public enum HUDType {
     case warning(String?)
     //show given content
     case content(String?)
-    //auto dismiss after given time(FGHUDToastDuration)
+    //auto dismiss after given time(FGHUDAutoDismisDuration)
     case toast(String?)
 }
 
@@ -82,7 +82,7 @@ class FGHUD: UIView {
                 make.edges.equalTo(hud)
             })
             accessoryView.type = type
-            DispatchQueue.main.asyncAfter(deadline: .now() + FGHUDToastDuration) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + FGHUDAutoDismisDuration) {
                 hud.hide()
             }
         }
@@ -118,7 +118,7 @@ class FGHUD: UIView {
             break
         case let .toast(msg):
             contentBlock(msg)
-            DispatchQueue.main.asyncAfter(deadline: .now() + FGHUDToastDuration, execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + FGHUDAutoDismisDuration, execute: {
                 hud.hide()
             })
             break
