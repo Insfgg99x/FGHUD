@@ -19,7 +19,7 @@
 ![HUD](/img/2.png)
 
 
-![HUD](/img/2.png)
+![HUD](/img/3.png)
 
 
 ![](/img/demo.gif)
