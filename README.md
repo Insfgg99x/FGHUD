@@ -12,17 +12,21 @@
 - [x] rotation support
 
 ### Screen Shots
-***HUD***
+
 ![](/img/1.png)
-***HUD***
+
+
 ![HUD](/img/2.png)
-***Toast***
+
+
 ![HUD](/img/2.png)
+
 
 ![](/img/demo.gif)
 
 ***See Vedio Here***
-[](https://pan.baidu.com/s/1mYi3fG7K-5kq_aI-gNhsbA)
+
+[Vedio](https://pan.baidu.com/s/1mYi3fG7K-5kq_aI-gNhsbA)
 
 ### Usage
 
