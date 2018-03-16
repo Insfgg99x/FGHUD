@@ -7,17 +7,22 @@
 
 ----------------------------------------
 ### FGHUD
-- [x] Toast
 - [x] HUD
+- [x] toast
+- [x] rotation support
 
 ### Screen Shots
-
-![](/img/demo.png)
+***HUD***
+![](/img/1.png)
+***HUD***
+![HUD](/img/2.png)
+***Toast***
+![HUD](/img/2.png)
 
 ![](/img/demo.gif)
 
 ***See Vedio Here***
-[Demo Vedio](http://p5gxxccbw.bkt.clouddn.com/vedio.mov)
+[](https://pan.baidu.com/s/1mYi3fG7K-5kq_aI-gNhsbA)
 
 ### Usage
 
