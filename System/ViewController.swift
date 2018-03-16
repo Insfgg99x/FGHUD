@@ -75,13 +75,13 @@ class ViewController: UIViewController {
                     showHUD(.loading("Hi,FGHUD"))
                     break
                 case 2:
-                    showHUD(.success("哈哈哈"))
+                    showHUD(.success("Good Boy!"))
                     break
                 case 3:
-                    showHUD(.error("Hi, FGHUD"))
+                    showHUD(.error("Opps..."))
                     break
                 case 4:
-                    showHUD(.warning("Hi, FGHUD"))
+                    showHUD(.warning("Be Happy!"))
                     break
                 case 5:
                     showHUD(HUDType.content("Hi,FGHUD"))

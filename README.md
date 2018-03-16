@@ -15,12 +15,17 @@
 
 ![](/img/1.png)
 
+![](/img/2.png)
 
-![HUD](/img/2.png)
+![](/img/3.png)
 
+![](/img/4.png)
 
-![HUD](/img/3.png)
+![](/img/5.png)
 
+![](/img/6.png)
+
+![](/img/7.png)
 
 ![](/img/demo.gif)
 
@@ -30,55 +35,47 @@
 
 ### Usage
 
-#### in a view controller
-templete hud
-```
+#### In UIViewController or subclass, UIView or subclass, you can use:
+
+```swift
 showHUD()
-```
-or
-```
-showHUD(.loading("Hi, FGHUD"))
-```
-toast style
-```
+showHUD(.loading("Loading..."))
+showHUD(.success("Success"))
+showHUD(.error("Operation Error"))
+showHUD(HUDType.content("watch Out!"))
 showHUD(.content("Hi, FGHUD"))
-```
-toast
-```
 showHUD(.toast("Hi, FGHUD"))
 ```
-hide
-```
+
+### Hide a HUD
+
+```swift
 hideHUD()
 ```
-
-#### or in a view
-show hud with content
-```
-_ = FGHUD.show(on: targetView, type: .loading("请稍后"))
-or
-_ = FGHUD.show(on: targetView, type: .content("Hi,FGHUD"))
-```
-toast
-```
-_ = FGHUD.show(on: targetView, type: .toast("Hi,FGHUD"))
-```
-hide
-```
-FGHUD.hide(from: targetView)
-```
+****HUD with type success,error,warning,toast will auto dismiss itself****
 
 ### Style
-```
+
+```swift
 public enum HUDType {
-    //show void hud
-    case `void`
+    public enum HUDType {
     //show a hud with template
     case loading(String?)
-    //show a hud with given content
+    //show success
+    case success(String?)
+    //show error
+    case error(String?)
+    //show warn
+    case warning(String?)
+    //show given content
     case content(String?)
-    //auto dismiss after FGHUDToastDuration sec.
+    //auto dismiss after given time(FGHUDToastDuration)
     case toast(String?)
+}
 }
 ```
 
+### Required
+
+- [x] Xocde 9
+- [x] Swift 4.x
