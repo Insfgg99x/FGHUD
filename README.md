@@ -36,7 +36,7 @@ showHUD()
 showHUD(.loading("Loading..."))
 showHUD(.success("Success"))
 showHUD(.error("Operation Error"))
-showHUD(.content("watch Out!"))
+showHUD(.warning("watch Out!"))
 showHUD(.content("Hi, FGHUD"))
 showHUD(.toast("Hi, FGHUD"))
 ```
