@@ -37,7 +37,6 @@ class FGHUD: UIView {
         let contentLb = UILabel.init(frame: .zero)
         contentLb.textColor = .white
         contentLb.textAlignment = .center
-        contentLb.numberOfLines = 0
         contentLb.font = UIFont.systemFont(ofSize: FGHUDFontSize)
         hud.addSubview(contentLb)
         
@@ -46,6 +45,7 @@ class FGHUD: UIView {
         var hudh:CGFloat = 100
         func contentBlock(_ msg: String?) {
             trimx = 40
+            contentLb.numberOfLines = 0
             contentLb.text = msg
             contentLb.snp.makeConstraints { (make) in
                 make.top.bottom.equalToSuperview()
@@ -76,6 +76,13 @@ class FGHUD: UIView {
                 make.right.equalTo(hud).offset(-5)
                 make.height.equalTo(20)
             }
+            var w = contentLb.sizeThatFits(.init(width: CGFloat.greatestFiniteMagnitude, height: 20)).width
+            if w < FGHUDMinWidth {
+                w = FGHUDMinWidth
+            } else if w > FGHUDMaxWidth {
+                w = FGHUDMaxWidth
+            }
+            hudw = w + 20
             let accessoryView = FGHUDAccessoryView.init(frame: .zero)
             hud.addSubview(accessoryView)
             accessoryView.snp.makeConstraints({ (make) in

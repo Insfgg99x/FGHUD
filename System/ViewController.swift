@@ -78,7 +78,7 @@ class ViewController: UIViewController {
                     showHUD(.success("Good Boy!"))
                     break
                 case 3:
-                    showHUD(.error("Opps..."))
+                    showHUD(.error("Index outof Range!"))
                     break
                 case 4:
                     showHUD(.warning("Be Happy!"))
