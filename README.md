@@ -50,7 +50,7 @@ hideHUD()
 
 ### Install
 ```
-pod 'FGHUD', '~> 2.2'
+pod 'FGHUD', '~> 2.3'
 ```
 
 ### Style
