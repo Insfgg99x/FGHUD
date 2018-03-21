@@ -52,6 +52,10 @@ hideHUD()
 ```
 pod 'FGHUD', '~> 2.3'
 ```
+and import 
+```
+import FGHUD
+```
 
 ### Style
 
