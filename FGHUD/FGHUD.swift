@@ -29,7 +29,6 @@ class FGHUD: UIView {
         guard let view = v else {
             return nil
         }
-        hide(from: view)
         let hud = FGHUD.init(frame: .init(x: 0, y: 0, width: 100, height: 100))
         hud.layer.cornerRadius = 10
         hud.backgroundColor = FGHUDTintColor
@@ -250,15 +249,19 @@ public extension UIView {
         }
     }
     func showHUD(_ type:HUDType) {
-        if let tmp = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
-            tmp.hideWithoutAnimation()
+        DispatchQueue.main.async {
+            if let tmp = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
+                tmp.hideWithoutAnimation()
+            }
+            let hud = FGHUD.show(on: self, type: type)
+            objc_setAssociatedObject(self, &FGHUDKey, hud, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
-        let hud = FGHUD.show(on: self, type: type)
-        objc_setAssociatedObject(self, &FGHUDKey, hud, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
     func hideHUD() {
-        if let hud = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
-            hud.hide()
+        DispatchQueue.main.async {
+            if let hud = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
+                hud.hide()
+            }
         }
     }
 }
@@ -275,15 +278,19 @@ public extension UIViewController {
         }
     }
     func showHUD(_ type:HUDType) {
-        if let tmp = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
-            tmp.hideWithoutAnimation()
+        DispatchQueue.main.async {
+            if let tmp = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
+                tmp.hideWithoutAnimation()
+            }
+            let hud = FGHUD.show(on: self.view, type: type)
+            objc_setAssociatedObject(self, &FGHUDKey, hud, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
-        let hud = FGHUD.show(on: self.view, type: type)
-        objc_setAssociatedObject(self, &FGHUDKey, hud, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
     func hideHUD() {
-        if let hud = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
-            hud.hide()
+        DispatchQueue.main.async {
+            if let hud = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
+                hud.hide()
+            }
         }
     }
 }
