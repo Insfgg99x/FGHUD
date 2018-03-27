@@ -50,7 +50,7 @@ hideHUD()
 
 ### Install
 ```
-pod 'FGHUD', '~> 2.3'
+pod 'FGHUD', '~> 2.4'
 ```
 and import 
 ```swift
