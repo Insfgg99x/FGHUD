@@ -67,7 +67,8 @@ HUDHide()
 
 ### Install
 ```
-pod 'FGHUD', '~> 2.4'
+pod repo update
+pod 'FGHUD', '~> 2.5'
 ```
 and import 
 ```swift
