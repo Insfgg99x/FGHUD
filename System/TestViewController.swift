@@ -64,28 +64,28 @@ class TestViewController: UIViewController {
             btn.handleClick(events: .touchUpInside, click: { (sender) in
                 switch  i {
                 case 0:
-                    targetView.showHUD()
+                    targetView.HUDLoading()
                     break
                 case 1:
-                    targetView.showHUD(.loading("Hi,FGHUD"))
+                    targetView.HUD(.loading("Hi,FGHUD"))
                     break
                 case 2:
-                    targetView.showHUD(.success("哈哈哈"))
+                    targetView.HUD(.success("哈哈哈"))
                     break
                 case 3:
-                    targetView.showHUD(.error("Hi, FGHUD"))
+                    targetView.HUD(.error("Hi, FGHUD"))
                     break
                 case 4:
-                    targetView.showHUD(.warning("Hi, FGHUD"))
+                    targetView.HUD(.warning("Hi, FGHUD"))
                     break
                 case 5:
-                    targetView.showHUD(HUDType.content("Hi,FGHUD"))
+                    targetView.HUD(HUDType.content("Hi,FGHUD"))
                     break
                 case 6:
-                    targetView.showHUD(.toast("Hi, FGHUD"))
+                    targetView.HUD(.toast("Hi, FGHUD"))
                     break
                 case 7:
-                    targetView.hideHUD()
+                    targetView.HUDHide()
                     break
                 default:
                     break

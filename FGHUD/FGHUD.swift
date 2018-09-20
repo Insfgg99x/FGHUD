@@ -239,7 +239,7 @@ private class FGHUDAccessoryView: UIView {
 //MARK: -
 //MARK: UIView
 public extension UIView {
-    func showHUD() {
+    func HUDLoading() {
         DispatchQueue.main.async {
             if let tmp = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
                 tmp.hideWithoutAnimation()
@@ -248,7 +248,7 @@ public extension UIView {
             objc_setAssociatedObject(self, &FGHUDKey, hud, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
-    func showHUD(_ type:HUDType) {
+    func HUD(_ type:HUDType) {
         DispatchQueue.main.async {
             if let tmp = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
                 tmp.hideWithoutAnimation()
@@ -257,7 +257,7 @@ public extension UIView {
             objc_setAssociatedObject(self, &FGHUDKey, hud, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
-    func hideHUD() {
+    func HUDHide() {
         DispatchQueue.main.async {
             if let hud = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
                 hud.hide()
@@ -268,7 +268,7 @@ public extension UIView {
 //MARK: -
 //MARK: UIViewController
 public extension UIViewController {
-    func showHUD() {
+    func HUDLoading() {
         DispatchQueue.main.async {
             if let tmp = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
                 tmp.hideWithoutAnimation()
@@ -277,7 +277,7 @@ public extension UIViewController {
             objc_setAssociatedObject(self, &FGHUDKey, hud, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
-    func showHUD(_ type:HUDType) {
+    func HUD(_ type:HUDType) {
         DispatchQueue.main.async {
             if let tmp = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
                 tmp.hideWithoutAnimation()
@@ -286,7 +286,7 @@ public extension UIViewController {
             objc_setAssociatedObject(self, &FGHUDKey, hud, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
-    func hideHUD() {
+    func HUDHide() {
         DispatchQueue.main.async {
             if let hud = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
                 hud.hide()

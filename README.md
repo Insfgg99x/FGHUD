@@ -31,6 +31,7 @@
 
 #### In UIViewController or subclass, UIView or subclass, you can use:
 
+- 2.4
 ```swift
 showHUD()
 showHUD(.loading("Loading..."))
@@ -40,11 +41,27 @@ showHUD(.warning("watch Out!"))
 showHUD(.content("Hi, FGHUD"))
 showHUD(.toast("Hi, FGHUD"))
 ```
+- 2.5
+```swift
+HUDLoading()
+HUD(.loading("Loading..."))
+HUD(.success("Success"))
+HUD(.error("Operation Error"))
+HUD(.warning("watch Out!"))
+HUD(.content("Hi, FGHUD"))
+HUD(.toast("Hi, FGHUD"))
+```
 
 ### Hide a HUD
 
+- 2.4
 ```swift
-hideHUD()
+hHideHUD()
+```
+
+- 2.5
+```swift
+HUDHide()
 ```
 ****HUD with type success,error,warning,toast will auto dismiss itself****
 
