@@ -6,6 +6,6 @@ target 'FGHUD' do
   use_frameworks!
 
   # Pods for FGHUD
-  pod 'SnapKit'
+  pod 'SnapKit', '~> 5.0.0'
 
 end
