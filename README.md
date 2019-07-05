@@ -31,12 +31,11 @@ HUD(.content("Hi, FGHUD"))
 HUD(.toast("Hi, FGHUD"))
 HUDHide()
 ```
-****HUD with type success,error,warning,toast will auto dismiss itself****
 
 ### Install
 ```
 pod repo update
-pod 'FGHUD', '~> 3.0'
+pod 'FGHUD', '~> 3.0.1'
 import FGHUD
 ```
 ### Requiredments
