@@ -128,7 +128,6 @@
 				C31AF1A4205A21EC009526AD /* Frameworks */,
 				C31AF1A5205A21EC009526AD /* Resources */,
 				CC92F82D7240C850EA086327 /* [CP] Embed Pods Frameworks */,
-				4F4D0A04D5CDF08C9EC92432 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -187,21 +186,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4F4D0A04D5CDF08C9EC92432 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FGHUD/Pods-FGHUD-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		90340C4919127794E62D6BD5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -226,7 +210,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FGHUD/Pods-FGHUD-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-FGHUD/Pods-FGHUD-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -235,7 +219,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FGHUD/Pods-FGHUD-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FGHUD/Pods-FGHUD-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

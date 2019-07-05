@@ -308,5 +308,5 @@ public func HUD(_ type:HUDType) {
 
 public func HUDHide() {
     let window = UIApplication.shared.keyWindow
-    window?.HUDLoading()
+    window?.HUDHide()
 }
