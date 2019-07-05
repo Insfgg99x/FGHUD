@@ -69,28 +69,28 @@ class ViewController: UIViewController {
             btn.handleClick(events: .touchUpInside, click: { (sender) in
                 switch  i {
                 case 0:
-                    HUDLoading()
+                    self.HUDLoading()
                     break
                 case 1:
-                    HUD(.loading("Hi,FGHUD"))
+                    self.HUD(.loading("Hi,FGHUD"))
                     break
                 case 2:
-                    HUD(.success("Good Boy!"))
+                    self.HUD(.success("Good Boy!"))
                     break
                 case 3:
-                    HUD(.error("Index outof Range!"))
+                    self.HUD(.error("Index outof Range!"))
                     break
                 case 4:
-                    HUD(.warning("Be Happy!"))
+                    self.HUD(.warning("Be Happy!"))
                     break
                 case 5:
-                    HUD(HUDType.content("Hi,FGHUD"))
+                    self.HUD(HUDType.content("Hi,FGHUD"))
                     break
                 case 6:
-                    HUD(.toast("Hi, FGHUD"))
+                    self.HUD(.toast("Hi, FGHUD"))
                     break
                 case 7:
-                    HUDHide()
+                    self.HUDHide()
                     break
                 default:
                     break

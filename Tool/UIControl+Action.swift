@@ -11,12 +11,12 @@ import UIKit
 private var UIControlActionHandlerKey = "UIControlActionHandlerKey"
 
 extension UIControl {
-    @objc func handleClick(events:UIControlEvents,click:((UIControl)->Void)){
+    @objc func handleClick(events: UIControl.Event, click: @escaping ((UIControl) -> ())) {
         objc_setAssociatedObject(self, &UIControlActionHandlerKey, click, objc_AssociationPolicy.OBJC_ASSOCIATION_COPY_NONATOMIC)
         self.addTarget(self, action: #selector(sc_handleClick(_:)), for: events)
     }
     @objc private func sc_handleClick(_ sender:UIControl){
-        let handler:((UIControl)->Void)?=objc_getAssociatedObject(self, &UIControlActionHandlerKey) as? ((UIControl)->Void)
+        let handler:((UIControl) -> ())? = objc_getAssociatedObject(self, &UIControlActionHandlerKey) as? ((UIControl) -> ())
         guard handler != nil else {
             return
         }

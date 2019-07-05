@@ -30,7 +30,7 @@ class FGHUD: UIView {
             return nil
         }
         let hud = FGHUD.init(frame: .init(x: 0, y: 0, width: 100, height: 100))
-        hud.layer.cornerRadius = 10
+        hud.layer.cornerRadius = 8
         hud.backgroundColor = FGHUDTintColor
         
         let contentLb = UILabel.init(frame: .zero)
@@ -101,7 +101,7 @@ class FGHUD: UIView {
                 make.right.equalTo(hud).offset(-5)
                 make.height.equalTo(20)
             }
-            let indicator = UIActivityIndicatorView.init(activityIndicatorStyle: .whiteLarge)
+            let indicator = UIActivityIndicatorView.init(style: .whiteLarge)
             hud.addSubview(indicator)
             indicator.snp.makeConstraints { (make) in
                 make.top.equalTo(hud).offset(20)
@@ -265,6 +265,7 @@ public extension UIView {
         }
     }
 }
+
 //MARK: -
 //MARK: UIViewController
 public extension UIViewController {
@@ -293,4 +294,19 @@ public extension UIViewController {
             }
         }
     }
+}
+
+public func HUDLoading() {
+    let window = UIApplication.shared.keyWindow
+    window?.HUDLoading()
+}
+
+public func HUD(_ type:HUDType) {
+    let window = UIApplication.shared.keyWindow
+    window?.HUD(type)
+}
+
+public func HUDHide() {
+    let window = UIApplication.shared.keyWindow
+    window?.HUDLoading()
 }

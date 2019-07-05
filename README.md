@@ -14,14 +14,6 @@
 
 ### Feathures
 
-![](/img/1.png)
-![](/img/2.png)
-![](/img/3.png)
-![](/img/4.png)
-![](/img/5.png)
-![](/img/6.png)
-![](/img/7.png)
-
 ![](/img/demo.gif)
 
 ****See Vedio Here****
@@ -29,19 +21,6 @@
 
 ### Usage
 
-#### In UIViewController or subclass, UIView or subclass, you can use:
-
-- 2.4
-```swift
-showHUD()
-showHUD(.loading("Loading..."))
-showHUD(.success("Success"))
-showHUD(.error("Operation Error"))
-showHUD(.warning("watch Out!"))
-showHUD(.content("Hi, FGHUD"))
-showHUD(.toast("Hi, FGHUD"))
-```
-- 2.5
 ```swift
 HUDLoading()
 HUD(.loading("Loading..."))
@@ -50,17 +29,6 @@ HUD(.error("Operation Error"))
 HUD(.warning("watch Out!"))
 HUD(.content("Hi, FGHUD"))
 HUD(.toast("Hi, FGHUD"))
-```
-
-### Hide a HUD
-
-- 2.4
-```swift
-hHideHUD()
-```
-
-- 2.5
-```swift
 HUDHide()
 ```
 ****HUD with type success,error,warning,toast will auto dismiss itself****
@@ -68,33 +36,10 @@ HUDHide()
 ### Install
 ```
 pod repo update
-pod 'FGHUD', '~> 2.5'
+pod 'FGHUD', '~> 3.0'
+import FGHUD
 ```
-and import 
-```swift
-  import FGHUD
-```
+### Requiredments
 
-### Style
-
-```swift
-public enum HUDType {
-    //show a hud with template
-    case loading(String?)
-    //show success
-    case success(String?)
-    //show error
-    case error(String?)
-    //show warn
-    case warning(String?)
-    //show given content
-    case content(String?)
-    //auto dismiss after given time(FGHUDToastDuration)
-    case toast(String?)
-}
-```
-
-### Required
-
-- [x] Xocde 9
-- [x] Swift 4.x
+- [x] Xocde 10.2.1
+- [x] Swift 5.0
