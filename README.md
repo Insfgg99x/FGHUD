@@ -39,6 +39,6 @@ pod 'FGHUD', '~> 3.0.1'
 import FGHUD
 ```
 ### Requiredments
-
+- [x] 3.0.1 for iOS 8.x, 3.0.2 for iOS 10.x
 - [x] Xocde 10.2.1
 - [x] Swift 5.0

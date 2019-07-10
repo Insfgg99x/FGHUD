@@ -16,6 +16,7 @@
 		C31AF1C0205A237A009526AD /* FGHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31AF1BF205A237A009526AD /* FGHUD.swift */; };
 		C31AF1C2205A27F4009526AD /* FGHUDConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31AF1C1205A27F4009526AD /* FGHUDConst.swift */; };
 		C31AF1C5205A36A8009526AD /* UIControl+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31AF1C4205A36A8009526AD /* UIControl+Action.swift */; };
+		C386761922CF6C1D00A01009 /* Persion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C386761822CF6C1D00A01009 /* Persion.swift */; };
 		C3D9AFE2205B5F76003929FE /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D9AFE1205B5F76003929FE /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		C31AF1BF205A237A009526AD /* FGHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FGHUD.swift; sourceTree = "<group>"; };
 		C31AF1C1205A27F4009526AD /* FGHUDConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FGHUDConst.swift; sourceTree = "<group>"; };
 		C31AF1C4205A36A8009526AD /* UIControl+Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+Action.swift"; sourceTree = "<group>"; };
+		C386761822CF6C1D00A01009 /* Persion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persion.swift; sourceTree = "<group>"; };
 		C3D9AFE1205B5F76003929FE /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		F55A3989926BF8EE3BD22C45 /* Pods_FGHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FGHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -81,6 +83,7 @@
 			children = (
 				C31AF1AA205A21EC009526AD /* AppDelegate.swift */,
 				C31AF1AC205A21EC009526AD /* ViewController.swift */,
+				C386761822CF6C1D00A01009 /* Persion.swift */,
 				C3D9AFE1205B5F76003929FE /* TestViewController.swift */,
 				C31AF1AE205A21EC009526AD /* Main.storyboard */,
 				C31AF1B1205A21EC009526AD /* Assets.xcassets */,
@@ -232,6 +235,7 @@
 				C31AF1C2205A27F4009526AD /* FGHUDConst.swift in Sources */,
 				C31AF1C0205A237A009526AD /* FGHUD.swift in Sources */,
 				C31AF1C5205A36A8009526AD /* UIControl+Action.swift in Sources */,
+				C386761922CF6C1D00A01009 /* Persion.swift in Sources */,
 				C31AF1AD205A21EC009526AD /* ViewController.swift in Sources */,
 				C3D9AFE2205B5F76003929FE /* TestViewController.swift in Sources */,
 				C31AF1AB205A21EC009526AD /* AppDelegate.swift in Sources */,

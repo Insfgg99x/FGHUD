@@ -10,6 +10,7 @@ import UIKit
 
 let sw = UIScreen.main.bounds.size.width
 let sh = UIScreen.main.bounds.size.height
+var i = 0
 
 class ViewController: UIViewController {
     override func viewDidLoad() {
@@ -96,6 +97,16 @@ class ViewController: UIViewController {
                     break
                 }
             })
+        }
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        DispatchQueue.global().async {
+            if i % 2 == 0 {
+                Persion.show()
+            } else {
+                Persion.hide()
+            }
+            i += 1
         }
     }
 }
