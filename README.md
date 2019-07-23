@@ -35,7 +35,7 @@ HUDHide()
 ### Install
 ```
 pod repo update
-pod 'FGHUD', '~> 3.0.1'
+pod 'FGHUD', '~> 3.0.3'
 import FGHUD
 ```
 ### Requiredments

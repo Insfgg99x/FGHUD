@@ -258,8 +258,8 @@ public extension UIView {
         }
     }
     func HUDHide() {
-        DispatchQueue.main.async {
-            if let hud = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
+        if let hud = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
+            DispatchQueue.main.async {
                 hud.hide()
             }
         }
@@ -288,8 +288,8 @@ public extension UIViewController {
         }
     }
     func HUDHide() {
-        DispatchQueue.main.async {
-            if let hud = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
+        if let hud = objc_getAssociatedObject(self, &FGHUDKey) as? FGHUD {
+            DispatchQueue.main.async {
                 hud.hide()
             }
         }
